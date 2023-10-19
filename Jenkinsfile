@@ -1,12 +1,9 @@
 pipeline {
-    agent {
-        docker { image 'node:18.18.2-alpine3.18' }
-    }
+    agent { docker { image 'python:3.12.0-alpine3.18' } }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                sh 'node --version'
-                echo 'toto'
+                sh 'python --version'
             }
         }
     }
